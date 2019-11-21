@@ -1,0 +1,27 @@
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,500,600,700');
+.fp-contenedor-imagen-home{
+    width: 20rem;
+}
+.fp-contenedor-presentacion{
+    display: flex;
+    align-items: center;
+    padding-top:8rem;
+    padding-bottom: 5rem;
+    
+    }
+    .imagen-presentacion{
+         box-sizing: border-box;
+        width: 100%;
+    }
+    .fp-letra-principal{
+        font-family: 'Nunito', sans-serif;
+        color:rgb(65, 172, 16);
+        box-sizing: border-box;
+        padding-top: 8rem;
+        padding-bottom: 3rem;
+    }
+    .fp-contenido-presentacion{
+       height: 22.5rem;
+        
+    }

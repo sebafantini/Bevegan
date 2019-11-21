@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,500,600,700');
+.fp-contenedor-login{
+    padding-top: 5rem;
+    
+}
+.fp-titulo-bienvenida{
+    color:rgb(65, 172, 16);
+    font-family: 'Nunito', sans-serif;
+}
+.fp-imagen-login{
+    width: 85%;
+}
+.fp-formulario-login{
+    padding-top: 10rem;
+}
+

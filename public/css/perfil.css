@@ -1,0 +1,22 @@
+.fp-container-perfil{
+    padding-top: 5rem;
+   
+}
+.fp-contenedor-compras{
+    padding-top: 3rem;
+}
+
+.fp-foto-compra{
+    width: 10%;
+}
+.fp-detalle-compra{
+    font-style: 1rem;
+    color: red;
+}
+.fp-letra-hdos{
+    font-family: 'Nunito', sans-serif;
+    color:rgb(65, 172, 16);
+
+.fp-productos-compras{
+    padding-top: 13rem;
+}

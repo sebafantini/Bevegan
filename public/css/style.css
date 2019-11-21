@@ -1,0 +1,29 @@
+.imagen-producto{
+    width: 100%;
+}
+.contenedor{
+    display: flex;
+    justify-content: space-around;
+}
+.producto-uno{
+    padding: 20px;
+}
+.boton-agregar{
+    width: 100px;
+    height: 30px;
+    color: #000;
+    border: none;
+    border-radius: 40px;
+    align-items: center;
+   
+}
+.boton-agregar:hover {
+    color: #fff;
+    background-color: rgb(116, 223, 95);
+    box-shadow: 0px 15px 20px  rgb(116, 223, 95);
+  }
+.precio-producto{
+    font-size: 25px;
+    color: rgb(34, 145, 93);
+}
+
