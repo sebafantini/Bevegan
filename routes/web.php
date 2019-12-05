@@ -11,11 +11,29 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
-Route::get('/home', function(){
+
+Route::get('/', function(){
     return view('home');
 });
+Route::get('/perfil', function(){
+    return view('perfil');
+});
+Route::get('/compras', function(){
+    return view('compras');
+});
+Route::get('/preguntas', function(){
+    return view('preguntas');
+});
+Route::get('/favoritos', function(){
+    return view('favoritos');
+});
+Route::get('/categoriaAgregar', function(){
+    return view('favoritos');
+});
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
