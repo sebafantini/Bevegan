@@ -4,7 +4,7 @@
 @section('content')
 <div class="container">
         <div class="row fp-contenedor-presentacion">
-            
+            <h1>PRODUCTOS POR AHORA</h1>
             
             <div class="fp-contenido-presentacion p-3 col-6 col-sm-12 col-md-12 col-lg-6 align-center">
               
