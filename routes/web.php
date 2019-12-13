@@ -39,7 +39,24 @@ Route::get('/contacto', function(){
     return view('contacto');
 });
 
+//Ruta listar las categorias
+Route::get('/categoriaListado', 'CategoriaController@index');
 
+Route::get('/categoriaAgregar', 'CategoriaController@create');
+Route::post('/categoriaGuardar', 'CategoriaController@save');
+Route::get('/categoriaDetalle/{id}', 'CategoriaController@show');
+
+//Ruta para Editar Categorias
+Route::get('/categoriaEditar/{id}','CategoriaController@edit');
+
+//Ruta para guardar los cambios método update
+Route::post('/categoriaEditadaGuardar/{id}', 'CategoriaController@update');
+
+//Ruta para eliminar una película 
+Route::get('/categoriaEliminar/{id}','CategoriaController@delete');
+
+//Ruta para buscar películas
+Route::get('/categoriaBuscar','CategoriaController@search');
 
 Auth::routes();
 
