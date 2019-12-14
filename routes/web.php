@@ -58,6 +58,18 @@ Route::get('/categoriaEliminar/{id}','CategoriaController@delete');
 //Ruta para buscar películas
 Route::get('/categoriaBuscar','CategoriaController@search');
 
+
+//Rutas para el Crud de Productos
+Route::get('/productoListado', 'ProductoController@index');
+Route::get('/productoDetalle/{id}', 'ProductoController@show');
+Route::get('/productoAgregar', 'ProductoController@create');
+Route::post('/productoGuardar', 'ProductoController@save');
+Route::get('/productoEditar/{id}','ProductoController@edit');
+Route::post('/productoEditadaGuardar/{id}', 'ProductoController@update');
+Route::get('/productoEliminar/{id}','ProductoController@delete');
+Route::get('/productoBuscar','ProductoController@search');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
