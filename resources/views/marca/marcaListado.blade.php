@@ -27,12 +27,11 @@
         @foreach ($marcas as  $value)
             <tr>
             <td>{{$value->id}}</td>
-            <td>{{$value->title}}</td>
+            <td>{{$value->nombre}}</td>
             <td><a href="/marcaDetalle/{{$value->id}}"><ion-icon name="eye"></ion-icon></a></td>
             <td><a href="/marcaEditar/{{$value->id}}"><ion-icon name="create"></ion-icon></a></td>
             <td><a href="/marcaEliminar/{{$value->id}}"><ion-icon name="trash"></ion-icon></td></a>
             </tr>
-
         @endforeach
     <tr>
 

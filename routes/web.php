@@ -12,64 +12,64 @@
 */
 
 
+//Paginas Publicas
+Route::get('/', function(){return view('home');});
+Route::get('/productos', 'ProductoController@vistaUsuario');
+Route::get('/contacto', function(){return view('contacto');});
 
 
-Route::get('/', function(){
-    return view('home');
-});
-Route::get('/perfil', function(){
-    return view('perfil');
-});
-Route::get('/compras', function(){
-    return view('compras');
-});
-Route::get('/preguntas', function(){
-    return view('preguntas');
-});
-Route::get('/favoritos', function(){
-    return view('favoritos');
-});
-Route::get('/categoriaAgregar', function(){
-    return view('favoritos');
-});
-Route::get('/productos', function(){
-    return view('productos');
-});
-Route::get('/contacto', function(){
-    return view('contacto');
+
+Route::get('/ayuda', function(){
+    return view('ayuda');
 });
 
+
+
+
+
+//Paginas que se acceden solo si se esta logueado
+Route::get('/perfil', function(){return view('perfil');})->middleware('auth');
+Route::get('/compras', function(){return view('compras');})->middleware('auth');
+Route::get('/preguntas', function(){return view('preguntas');})->middleware('auth');
+Route::get('/favoritos', function(){return view('favoritos');})->middleware('auth');
+Route::get('/categoriaAgregar', function(){return view('favoritos');})->middleware('auth');
+Route::get('/editarInformacion', function(){return view('editarInformacion');})->middleware('auth');
+Route::get('/editarPass', function(){return view('editarPass');})->middleware('auth');
+
+
+//El usuario necesita ser Administrador para acceder role=7
 //Ruta listar las categorias
-Route::get('/categoriaListado', 'CategoriaController@index');
-
-Route::get('/categoriaAgregar', 'CategoriaController@create');
-Route::post('/categoriaGuardar', 'CategoriaController@save');
-Route::get('/categoriaDetalle/{id}', 'CategoriaController@show');
-
-//Ruta para Editar Categorias
-Route::get('/categoriaEditar/{id}','CategoriaController@edit');
-
-//Ruta para guardar los cambios método update
-Route::post('/categoriaEditadaGuardar/{id}', 'CategoriaController@update');
-
-//Ruta para eliminar una película 
-Route::get('/categoriaEliminar/{id}','CategoriaController@delete');
-
-//Ruta para buscar películas
-Route::get('/categoriaBuscar','CategoriaController@search');
+Route::get('/categoriaListado', 'CategoriaController@index')->middleware('roleAdm');
+Route::get('/categoriaAgregar', 'CategoriaController@create')->middleware('roleAdm');
+Route::post('/categoriaGuardar', 'CategoriaController@save')->middleware('roleAdm');
+Route::get('/categoriaDetalle/{id}', 'CategoriaController@show')->middleware('roleAdm');
+Route::get('/categoriaEditar/{id}','CategoriaController@edit')->middleware('roleAdm');
+Route::post('/categoriaEditadaGuardar/{id}', 'CategoriaController@update')->middleware('roleAdm');
+Route::get('/categoriaEliminar/{id}','CategoriaController@delete')->middleware('roleAdm');
+Route::get('/categoriaBuscar','CategoriaController@search')->middleware('roleAdm');
 
 
 //Rutas para el Crud de Productos
-Route::get('/productoListado', 'ProductoController@index');
-Route::get('/productoDetalle/{id}', 'ProductoController@show');
-Route::get('/productoAgregar', 'ProductoController@create');
-Route::post('/productoGuardar', 'ProductoController@save');
-Route::get('/productoEditar/{id}','ProductoController@edit');
-Route::post('/productoEditadaGuardar/{id}', 'ProductoController@update');
-Route::get('/productoEliminar/{id}','ProductoController@delete');
-Route::get('/productoBuscar','ProductoController@search');
+Route::get('/productoListado', 'ProductoController@index')->middleware('roleAdm');
+Route::get('/productoDetalle/{id}', 'ProductoController@show')->middleware('roleAdm');
+Route::get('/productoAgregar', 'ProductoController@create')->middleware('roleAdm');
+Route::post('/productoGuardar', 'ProductoController@save')->middleware('roleAdm');
+Route::get('/productoEditar/{id}','ProductoController@edit')->middleware('roleAdm');
+Route::post('/productoEditadaGuardar/{id}', 'ProductoController@update')->middleware('roleAdm');
+Route::get('/productoEliminar/{id}','ProductoController@delete')->middleware('roleAdm');
+Route::get('/productoBuscar','ProductoController@search')->middleware('roleAdm');
+
+//Rutas para el Crud de Marcas
+Route::get('/marcaListado', 'MarcaController@index')->middleware('roleAdm')->middleware('roleAdm');
+Route::get('/marcaAgregar', 'MarcaController@create')->middleware('roleAdm');
+Route::post('/marcaGuardar', 'MarcaController@save')->middleware('roleAdm');
+Route::get('/marcaDetalle/{id}', 'MarcaController@show')->middleware('roleAdm');
+Route::get('/marcaEditar/{id}','MarcaController@edit')->middleware('roleAdm');
+Route::post('marcaEditadaGuardar/{id}','MarcaController@update')->middleware('roleAdm');
+Route::get('/marcaEliminar/{id}','MarcaController@delete')->middleware('roleAdm');
 
 
+//Paginas de Laravel por default
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+

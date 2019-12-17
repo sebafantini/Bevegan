@@ -152,7 +152,13 @@ class ProductoController extends Controller
         //dd($buscar);
         $productos = Producto::where('nombre','like','%'.$buscar.'%')->paginate(6);
         return view('producto.productoListado')->with('productos',$productos);
-        
+
     }          
+
+    public function vistaUsuario (){
+        $productos = Producto::paginate(6);
+        //$productos = categoria::all();
+        return view ('productos') -> with('productos', $productos);
+    }
 
 }
