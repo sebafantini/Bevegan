@@ -6,8 +6,8 @@
 <div>
     <form class="form-inline" action="/productoBuscar" method="GET" >
         @csrf
-        <input class="btn btn-primary " type="submit" value="Buscar"><input class="form-control mx-sm-3" type="text" name="busqueda">
-        <a class="btn btn-success " href="/productoAgregar">Agregar producto</a>
+        <input class="form-control mx-sm-3" type="text" name="busqueda"><input class="btn btn-primary " type="submit" value="Buscar">
+        
       </form>
 </div>
 
@@ -46,7 +46,7 @@
 <div>
     {{$productos->links()}}
 </div>
-
+<a class="btn btn-success " href="/productoAgregar">Agregar producto</a>
 </div>    
 
 @endsection

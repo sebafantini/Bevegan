@@ -5,7 +5,7 @@
     <div class="col-lg-4 offset-lg-4">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item ">
-                <img src="/storage/{{$productos->imagen}}" alt="">    
+                <img class = "rounded mx-auto d-block imagenListaProducto" src="/storage/{{$productos->imagen}}" alt="">    
                 </li>
             </ul>            
 

@@ -38,3 +38,9 @@
 }
 
 
+.imagenListaProducto{
+    width: 200px;
+    height: 200px;
+    
+    padding-bottom: 1rem;
+}

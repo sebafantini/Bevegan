@@ -15,6 +15,8 @@
 //Paginas Publicas
 Route::get('/', function(){return view('home');});
 Route::get('/productos', 'ProductoController@vistaUsuario');
+
+
 Route::get('/contacto', function(){return view('contacto');});
 
 
@@ -33,7 +35,10 @@ Route::get('/compras', function(){return view('compras');})->middleware('auth');
 Route::get('/preguntas', function(){return view('preguntas');})->middleware('auth');
 Route::get('/favoritos', function(){return view('favoritos');})->middleware('auth');
 Route::get('/categoriaAgregar', function(){return view('favoritos');})->middleware('auth');
-Route::get('/editarInformacion', function(){return view('editarInformacion');})->middleware('auth');
+
+Route::get('/editarInformacion/{id}','EditarPerfilComtroller@edit')->middleware('auth');
+Route::post('/perfilEditardaGuardar/{id}', 'EditarPerfilComtroller@update')->middleware('auth');
+
 Route::get('/editarPass', function(){return view('editarPass');})->middleware('auth');
 
 
@@ -51,7 +56,7 @@ Route::get('/categoriaBuscar','CategoriaController@search')->middleware('roleAdm
 
 //Rutas para el Crud de Productos
 Route::get('/productoListado', 'ProductoController@index')->middleware('roleAdm');
-Route::get('/productoDetalle/{id}', 'ProductoController@show')->middleware('roleAdm');
+Route::get('/productoDetalle/{id}', 'ProductoController@show');
 Route::get('/productoAgregar', 'ProductoController@create')->middleware('roleAdm');
 Route::post('/productoGuardar', 'ProductoController@save')->middleware('roleAdm');
 Route::get('/productoEditar/{id}','ProductoController@edit')->middleware('roleAdm');
@@ -67,6 +72,13 @@ Route::get('/marcaDetalle/{id}', 'MarcaController@show')->middleware('roleAdm');
 Route::get('/marcaEditar/{id}','MarcaController@edit')->middleware('roleAdm');
 Route::post('marcaEditadaGuardar/{id}','MarcaController@update')->middleware('roleAdm');
 Route::get('/marcaEliminar/{id}','MarcaController@delete')->middleware('roleAdm');
+Route::get('/marcaBuscar','MarcaController@search')->middleware('roleAdm');
+
+//Código del arcchvo de rutas web.php       
+Route::get('/addtocart/{id}', 'CartController@store')->middleware('auth');
+Route::get('/cart', 'CartController@index')->middleware('auth')->middleware('auth');
+Route::post('/cartclose', 'CartController@cartclose')->middleware('auth');
+Route::get('/historia', 'CartController@history')->middleware('auth')->middleware('auth');
 
 
 //Paginas de Laravel por default

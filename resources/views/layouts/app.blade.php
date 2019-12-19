@@ -40,10 +40,13 @@
                     <ul class="navbar-nav mr-auto">
 
                         <li class="nav-item active">
-                        <a class="nav-link font-weight-bold" href="{{'productos'}}">Productos<span class="sr-only">(current)</span></a>
-                            </li>
+                            <a class="nav-link font-weight-bold" href="{{'/productos'}}">Productos<span class="sr-only">(current)</span></a>
+                        </li>
                         <li class="nav-item active">
-                        <a class="nav-link font-weight-bold" href="{{'contacto'}}">Contacto</a>
+                            <a class="nav-link font-weight-bold" href="{{'/contacto'}}">Contacto</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link font-weight-bold" href="{{'/ayuda'}}">Ayuda</a>
                         </li>
 
 
@@ -55,18 +58,19 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarme') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li>
-                            
+                            <li class="nav-item active">
+                                
+                                <a class='nav-link' href={{'cart'}}>  <i class=""><img src="{{asset('/img/carrito.jpeg')}}" alt=""></i></a>
                             </li>
-                            
+                                
                             @if (Auth::User()->role == 7)
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdownAdministrar" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -87,10 +91,10 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     
-                                    <a class="dropdown-item" href="{{'perfil'}}">Perfil</a>
-                                    <a class="dropdown-item" href="{{'compras'}}">Compras</a>
-                                    <a class="dropdown-item" href="{{'preguntas'}}">Preguntas</a>
-                                    <a class="dropdown-item" href="{{'favoritos'}}">Favoritos</a>
+                                    <a class="dropdown-item" href="{{'/perfil'}}">Perfil</a>
+                                    <a class="dropdown-item" href="{{'/historia'}}">Compras</a>
+                                    
+                                    
                                     
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -103,6 +107,7 @@
                                     </form>
                                 </div>                                
                             </li>
+
 
                         @endguest
                     </ul>

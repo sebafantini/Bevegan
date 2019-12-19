@@ -4,10 +4,10 @@
 @section('content')
 <h2 class="text-center">Listado de todas tus Marcas</h2>
 <div>
-    <form class="form-inline" action="/buscarMarca" method="GET" >
+    <form class="form-inline" action="/marcaBuscar" method="GET" >
         @csrf
-        <input class="btn btn-primary " type="submit" value="Buscar"><input class="form-control mx-sm-3" type="text" name="busqueda">
-        <a class="btn btn-success " href="/marcaAgregar">Agregar Marca</a>
+        <input class="form-control mx-sm-3" type="text" name="busqueda"><input class="btn btn-primary " type="submit" value="Buscar">
+        
       </form>
 </div>
 
@@ -41,7 +41,7 @@
 <div>
     {{$marcas->links()}}
 </div>
-
+    <a class="btn btn-success " href="/marcaAgregar">Agregar Marca</a>
 </div>    
 
 @endsection

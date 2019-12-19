@@ -48,13 +48,9 @@ window.addEventListener('load',function(){
       //Esta es una forma mas corta de hacer un if simple, en ECMA6
 
       if (!validateEmail(email)) return false;
-      if (!validatePassword(password)) return false;
-      if (!validatePasswordRepeat(password, passwordRepeat)) return false;
-      if (!validateUsername(userName)) return false;
       if(!validateProvincia(provincia)) return false;
       if(!validateMunicipio(municipio)) return false;
-      if (!validateTermsCondition(termsCondition)) return false;
-
+      
       return true;
       }
       //Aquí comoenzo a realizar cada una de las funciones encgadas de hacer las validaciones.

@@ -157,8 +157,10 @@ class ProductoController extends Controller
 
     public function vistaUsuario (){
         $productos = Producto::paginate(6);
+        $marcas = marca::all();
+        $categorias = categoria::all();
         //$productos = categoria::all();
-        return view ('productos') -> with('productos', $productos);
+        return view ('productos', compact('productos', 'marcas', 'categorias'));
     }
 
 }
