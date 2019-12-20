@@ -118,6 +118,42 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+
+        <div class="mt-5 pt-5 pb-5 footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-5 col-xs-12 about-company">
+                  <h2>BeVegan</h2>
+                  <p class="pr-5 text-white-50">Somos tu tienda on-line de productos saludables.
+          Nuestra misión es ofrecerte los mejores productos del mercado, en un solo lugar, para que comas rico y sano. </p>
+                  <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
+                </div>
+                <div class="col-lg-3 col-xs-12 links">
+                  <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+                    <ul class="m-0 p-0">
+                      <li>- <a class="text-white-50" href="#">Consejo Nacional de Nutrición</a></li>
+                      <li>- <a class="text-white-50" href="#">ONG Vida Silvestre</a></li>
+                      <li>- <a class="text-white-50" href="#">INTA</a></li>
+                      <li>- <a class="text-white-50" href="#">Fundación Agricultura Familiar</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-xs-12 location">
+                  <h4 class="mt-lg-0 mt-sm-4">¿Dónde estamos?</h4>
+                  <p>Av. Monroe 860, CABA</p>
+                  <p class="mb-0"><i class="fa fa-phone mr-3"></i>(54 11) 4754-3010</p>
+                  <p><i class="fa fa-envelope-o mr-3"></i>info@bevegan.com</p>
+                </div>
+              </div>
+              <div class="row mt-5">
+                <div class="col copyright">
+                  <p class=""><small class="text-white-50">© 2019. All Rights Reserved.</small></p>
+                </div>
+              </div>
+            </div>
+            </div>
+
+
     </div>
 </body>
 </html>

@@ -11,7 +11,7 @@ use Illuminate\Validation\Rules\Unique;
 class ProductoController extends Controller
 {
     public function index (){
-        $productos = Producto::paginate(6);
+        $productos = Producto::paginate(8);
         //$productos = categoria::all();
         return view ('producto.productoListado') -> with('productos', $productos);
     }
@@ -150,13 +150,13 @@ class ProductoController extends Controller
         //dd($request);
         $buscar = $request->busqueda;
         //dd($buscar);
-        $productos = Producto::where('nombre','like','%'.$buscar.'%')->paginate(6);
+        $productos = Producto::where('nombre','like','%'.$buscar.'%')->paginate(8);
         return view('producto.productoListado')->with('productos',$productos);
 
     }          
 
     public function vistaUsuario (){
-        $productos = Producto::paginate(6);
+        $productos = Producto::paginate(8);
         $marcas = marca::all();
         $categorias = categoria::all();
         //$productos = categoria::all();

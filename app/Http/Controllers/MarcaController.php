@@ -8,7 +8,7 @@ use App\marca;
 class MarcaController extends Controller
 {
     public function index (){
-        $marcas = marca::paginate(6);
+        $marcas = marca::paginate(8);
         return view ('marca.marcaListado') -> with('marcas', $marcas);
     }
     public function create(){

@@ -8,7 +8,7 @@
 
 <h2 class="fp-titulo-bienvenida text-center">Nuestros Productos</h2>   
 <br>
-<div class="container-fluid row">
+<div class="container-fluid">
   
         <div class="col-12 row-cols-12 row-cols-md-7 row-cols-lg-7">
             <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
@@ -23,8 +23,8 @@
                                   <li class="list-group-item">{{$value->marca['nombre']}}</li>
                                   <li class="list-group-item">{{$value->precio}}</li>
                             </ul>  
-                              <a href="/addtocart/{{$value->id}}"><button type="button" class="btn btn-outline-success">Comprar</button></a>                        
-                              <button type="button" class="btn btn-outline-warning">Favoritos</button>
+                              <a href="/addtocart/{{$value->id}}"><button type="button" class="btn btn-outline-success">Agregar al Carrito</button></a>                        
+                              
                           </div>
                   </div>
               </div>        

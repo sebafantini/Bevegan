@@ -9,7 +9,7 @@ use Facade\FlareClient\View;
 class CategoriaController extends Controller
 {
     public function index (){
-        $categorias = Categoria::paginate(6);
+        $categorias = Categoria::paginate(8);
         //$categorias = categoria::all();
         return view ('categoria.categoriaListado') -> with('categorias', $categorias);
     }
